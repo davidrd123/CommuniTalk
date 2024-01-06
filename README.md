@@ -80,7 +80,7 @@ Similarly when retrieving all posts, I used a `COUNT` subquery to count the numb
 
 Search as implemented only searches the title and body of the posts. It does not search the comments. 
 
-# Paths not Taken
+# Future Work
 
 ## Admin User Functionality
 
