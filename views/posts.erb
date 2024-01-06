@@ -1,0 +1,81 @@
+<section id="posts-for-page">
+  <table class="full-width post-list columns">
+    <thead>
+      <tr>
+        <th class="left-align" width="70%">Post Topic</th>
+        <th width="10%">Replies</th>
+        <th width="20%">Activity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <div id="posts-table">
+      <% @posts.each do |post, _| %>
+        <tr id="post-<%= post[:id] %>">
+          <td class="left-align" width="70%">
+            <div class="author-avatar">
+              <a href="/users/<%= post[:user][:id] %>">
+                <p data-letters="<%= user_initials(post[:user][:id]) %>"></p>
+              </a>
+            </div>
+            <div class="post-title">
+              <a href="/posts/<%= post[:id] %>"><%= post[:title] %></a>
+            </div>
+            <div class="post-author">
+              <a href="/users/<%= post[:user][:id] %>">
+                <%= "#{post[:user][:first_name]} #{post[:user][:last_name]}" %>
+              </a>
+            </div>
+          </td>
+          <td class="post-comments-count" width="10%"><%= post[:comment_count] %></td>
+          <td class="post-last-activity" width="20%"><%= latest_activity_on_post(post) %></td>
+        </tr>
+      <% end %>
+      </div>
+    </tbody>
+  </table>
+  <div class="columns full-width text-center">
+    <ul class="pagination">
+      <% if @curr_page > 1 %>
+        <% if @params[:query] %>
+          <li><a href="/search?query=<%= @params[:query] %>&page=<%= @curr_page - 1 %>">«</a></li>
+        <% elsif @user %>
+          <li><a class="arrows" href="/users/<%= @user[:id] %>?page=<%= @curr_page - 1 %>">«</a>
+        <% else %>
+          <li>
+            <a class="arrows" href="/?page=<%= @curr_page - 1 %>">«</a>
+          </li>
+        <% end %>
+      <% else %>
+        <li>
+          <a class="disabled" href="#">«</a>
+        </li>
+      <% end %>
+      <% 1.upto(@num_pages) do |page_num| %>
+        <li class="<%= @curr_page == page_num ? 'active' : '' %>">
+          <% if params[:query] %>
+            <a href="/search?query=<%= params[:query] %>&page=<%= page_num %>"><%= page_num %></a>
+          <% elsif @user %>
+            <a href="/users/<%= @user[:id] %>?page=<%= page_num %>"><%= page_num %></a>
+          <% else %>
+            <a href="/?page=<%= page_num %>"><%= page_num %></a>
+          <% end %>
+        </li>
+      <% end %>
+      <% if @curr_page < @num_pages %>
+        <% if params[:query] %>
+          <li><a class="arrows" href="/search?query=<%= params[:query] %>&page=<%= @curr_page + 1 %>">»</a>
+        <% elsif @user %>
+          <li><a class="arrows" href="/users/<%= @user[:id] %>?page=<%= @curr_page + 1 %>">»</a>
+        <% else %>
+          <li>
+            <a class="arrows" href="/?page=<%= @curr_page + 1 %>">»</a>
+          </li>
+        <% end %>
+      <% else %>
+        <li>
+          <a class="disabled" href="#">»</a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

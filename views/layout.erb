@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>CommuniTalk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <script src="/javascripts/jquery-3.6.0.js"></script>
+    <script src="/javascripts/application.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+  </head>
+  <% clear_after_signin_session_variables %>
+  <body>
+    <div class="wrapper columns full-width">
+      
+
+      <% if session[:error] %>
+        <div class="flash error">
+          <p><%= session.delete(:error) %></p>
+        </div>
+      <% end %>
+
+      <% if session[:success] %>
+        <div class="flash success">
+          <p><%= session.delete(:success) %></p>
+        </div>
+      <% end %>
+
+      <header>
+        <h1>
+          <a href="/">
+            <img class="logo-and-text" src="/images/CT-logo-and-text-2800x500.png" alt="CommuniTalk" />
+          </a>
+        </h1>
+        <div class="actions">
+          <%== yield_content :header_links %>
+        </div>
+      </header>
+
+      <main>
+        <%== yield %>
+      </main>
+
+      <footer>
+        <% if session[:username] %>
+          <form action="/users/signout" method="post">
+            <p class="user-status">
+              Signed in as <%= session[:username] %>
+              <input id="signout" type="submit" value="Sign Out">
+            </p>
+          </form>
+        <% end %>
+      </footer>
+    </div>
+  </body>
+</html>

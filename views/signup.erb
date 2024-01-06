@@ -1,0 +1,24 @@
+<form action="/users/signup" class="signup" method="post">
+  <fieldset>
+    <dl>
+      <dt><label for="username">Username</dt>
+      <dd><input type="text" name="username" id="username" value="<%= @username %>" required /></dd>
+    </dl>
+    <dl>
+      <dl><label for="first_name">First Name</dt>
+      <dd><input type="text" name="first_name" id="first_name" value="<%= @first_name %>" required /></dd>
+    </dl>
+    <dl>
+      <dt><label for="last_name">Last Name</dt>
+      <dd><input type="text" name="last_name" id="last_name" value="<%= @last_name %>" /></dd>
+    <dl>
+      <dt><label for="password">Password</dt>
+      <dd><input type="password" id="password" name="password" required /></dd>
+    </dl>
+    <dl>
+      <dt><label for="password_confirmation">Confirm Password</dt>
+      <dd><input type="password" id="password_confirmation" name="password_confirmation" required /></dd>
+    </dl>
+    <input type="submit" value="Sign Up" />
+  </fieldset>
+</form>

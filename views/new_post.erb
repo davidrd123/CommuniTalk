@@ -1,0 +1,17 @@
+<form action="/posts/new" method="post" class="styled-form">
+  <fieldset>
+    <legend>New Post</legend>
+    <div class="centered-margin-auto">
+      <dl>
+        <dt><label for="post_title">Title</dt>
+        <dd><input type="text" name="post_title" id="post_title" value="<%= @title %>" /></dd>
+      </dl>
+      <dl>
+        <dt><label for="post_content">Content</dt>
+        <dd><textarea name="post_content" id="post_content" cols="80" rows="10"><%= @content %></textarea></dd>
+      </dl>
+      <input type="submit" value="Submit" />
+      <a href="/" id="cancel-button-link">Cancel</a>
+    </div>
+  </fieldset>
+</form>

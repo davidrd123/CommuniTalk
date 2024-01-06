@@ -1,0 +1,12 @@
+<section id="user-page">
+
+  <div class="author-avatar">
+    <p data-letters="<%= user_initials(@user[:id]) %>"></p>
+  </div>
+
+  <div class="user-full-name">
+    <%= "#{@user[:first_name]} #{@user[:last_name]}" %>
+  </div>
+
+  <%== erb :posts %>
+</section>

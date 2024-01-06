@@ -1,0 +1,17 @@
+<form action="/posts/<%= @post[:id] %>/edit" method="post" class="styled-form">
+  <legend><h2>Edit Post</h2></legend>
+  <fieldset>
+    <div class="centered-margin-auto">
+      <dl>
+        <dt><label for="post_title">Title</dt>
+        <dd><input type="text" name="post_title" id="post_title" value="<%= @post[:title] %>" /></dd>
+      </dl>
+      <dl>
+        <dt><label for="post_content">Content</dt>
+        <dd><textarea name="post_content" id="post_content" cols="80" rows="10"><%= @post[:content] %></textarea></dd>
+      </dl>
+      <input type="submit" value="Submit" />
+      <a href="/posts/<%= @post[:id] %>" id="cancel-button-link">Cancel</a>
+    </div>
+  </fieldset>
+</form>

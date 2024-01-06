@@ -1,0 +1,15 @@
+<form action="/users/signin" class="signin" method="post">
+  <fieldset>  
+    <dl>
+      <dt><label for="username">Username</dt>
+      <dd><input type="text" name="username" id="username" value="<%= @username %>" required /></dd>
+    </dl>
+    
+    <dl>
+      <dt><label for="password">Password</dt>
+      <dd><input type="password" id="password" name="password"/></dd>
+    </dl>
+    <input type="submit" value="Sign In" />
+    <a id="signup" href="/users/signup">Sign Up</a>
+  </fieldset>
+</form>

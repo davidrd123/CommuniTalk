@@ -1,0 +1,11 @@
+<section id="single-comment">
+  <%= @comment[:content]%>
+</section>
+
+<a href="/posts/<%= params[:post_id] %>/comments/<%= params[:comment_id] %>/edit" id="edit-comment-link">Edit Comment</a>
+<a href="/posts/<%= params[:post_id] %>/comments/<%= params[:comment_id] %>/delete" id="delete-comment-link">Delete Comment</a>
+<a href="/posts/<%= params[:post_id] %>" id="cancel-button-link">Cancel</a>
+
+
+
+  

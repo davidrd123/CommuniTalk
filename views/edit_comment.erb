@@ -1,0 +1,11 @@
+<legend><h2>Edit Comment</h2></legend>
+<fieldset class="comment">
+  <form action="/posts/<%= @post[:id] %>/comments/<%= @comment[:id] %>/edit" method="post" class="styled-form">
+    <div class="centered-margin-auto">
+      <textarea placeholder="Add a reply" name="comment_content" id="comment_content" cols="80" rows="10"><%= @comment[:content]%> </textarea>
+    </div>
+    <input type="submit" value="Submit" />
+    <a href="/posts/<%= @post[:id] %>" id="cancel-button-link">Cancel</a>
+  </form>
+</fieldset>
+  

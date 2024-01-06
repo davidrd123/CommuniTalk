@@ -1,0 +1,94 @@
+<section id="main-post">
+  <h1><%= @post[:title] %></h1>
+  <div class="author">
+    <%= @post[:user][:username] %>
+  </div>
+  <p><%= @post[:content] %></p>
+  <% if current_user_owns_post?(@post) %>
+    <form action="/posts/<%= @post[:id] %>/edit" method="get" class="edit styled-form">
+        <input type="submit" class="edit-btn" value="Edit Post">
+    </form>
+    <form action="/posts/<%= @post[:id] %>/delete" method="post" class="delete styled-form">
+        <input type="submit" class="delete-btn" value="Delete Post">
+    </form>
+  <% end %>
+  <div class="actions">
+    <a class="fa fa-reply reply" style="font-size:24px" href="#new-reply"> Reply</a>
+  </div>
+</section>
+
+<section id="replies">
+  <h3><%= @all_comments.size %> Replies</h3>
+  <% @comments.each do |comment, _| %>
+    <article class="comment">
+      <div class="author-avatar">
+        <a href="/users/<%= comment[:user][:id] %>">
+          <p data-letters="<%= user_initials(comment[:user][:id]) %>"></p>
+        </a>
+      </div>
+      <div class="comment-author">
+        <a href="/users/<%= comment[:user][:id] %>">
+          <%= "#{comment[:user][:first_name]} #{comment[:user][:last_name]}" %>
+        </a>
+      </div>
+      <div class="comment-last-activity">
+        <%= latest_activity_on_comment(comment) %>
+      </div>
+      <div class="comment-content">
+        <p><%= comment[:content] %></p>
+      </div>
+      <div class="comment-actions">
+        <% if current_user_owns_comment?(comment) %>
+          <form action="/posts/<%= @post[:id] %>/comments/<%= comment[:id] %>/edit" method="get" class="edit">
+            <input type="submit" class="comment-btn" value="Edit Comment">
+          </form>
+          <form action="/posts/<%= @post[:id] %>/comments/<%= comment[:id] %>/delete" method="post" class="delete">
+            <input type="submit" class="delete-btn comment-btn" value="Delete Comment">
+          </form>
+        <% end %>
+      </div>
+      <div class="actions">
+        <a class="fa fa-reply reply" style="font-size:24px" href="#new-reply"> Reply</a>
+      </div>
+    </article>
+  <% end %>
+</section>
+
+<section id="pagination" class="columns full-width text-center">
+  <ul class="pagination">
+    <% if @curr_page > 1 %>
+      <li><a class="arrows" href="/posts/<%= @post[:id] %>?page=<%= @curr_page - 1 %>">«</a>
+    <% else %>
+      <li>
+        <a class="disabled" href="#">«</a>
+      </li>
+    <% end %>
+    <% 1.upto(@num_pages) do |page_num| %>
+      <li class="<%= @curr_page == page_num ? 'active' : '' %>">
+        <a href="/posts/<%= @post[:id] %>?page=<%= page_num %>"><%= page_num %></a>
+      </li>
+    <% end %>
+    <% if @curr_page < @num_pages %>
+      <li>
+        <a class="arrows" href="/posts/<%= @post[:id] %>?page=<%= @curr_page + 1 %>">»</a>
+      </li>
+    <% else %>
+      <li>
+        <a class="disabled" href="#">»</a>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section id="new-reply">
+  <form action="/posts/<%= @post[:id] %>/comments/new" method="post" class="styled-form">
+    <legend><h2>New Reply</h2></legend>
+    <fieldset class="comment">
+      <div class="centered-margin-auto">
+        <textarea placeholder="Add a reply" name="comment_content" id="comment_content" cols="80" rows="10"></textarea>
+      </div>
+      <input type="submit" value="Submit" />
+      <a id="cancel-button-link" href="/">Back to Homepage</a>
+    </fieldset>
+  </form>
+</section>

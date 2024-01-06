@@ -1,0 +1,512 @@
+body {
+  font: normal 1em/1.4em "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.logo-and-text {
+  width: 560px;
+  height: 100px;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.flash {
+  font-size: 14px;
+  font-weight: bold; 
+  padding: 10px;
+}
+
+.flash.error {
+  /* color: #ff6633; */
+  background: #FFCFBF; 
+}
+
+.flash.success {
+  /* color: #33cc99; */
+  background: #CBF2E5; 
+}
+
+.pagination {
+  padding: 0;
+  margin: 8px 0;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.pagination li a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination li a:hover {
+  background: #ddd;
+}
+
+.pagination li.active a {
+  background: #003580;
+  color: white;
+}
+
+.pagination li .arrows {
+  color: #003580;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+}
+
+.pagination li .disabled {
+  color: #ccc;
+  pointer-events: none;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  margin: 0;
+}
+
+.columns {
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  float: left;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+div.author {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #999;
+}
+
+section#main-post {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+section#replies {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0px 0px 10px #ccc;
+  box-sizing: border-box;
+}
+
+article.comment {
+  border-top: 1px solid #bbb;
+  padding-top: 10px;
+  padding-left: 54px;
+  box-sizing: border-box;
+}
+
+article.comment .author-avatar {
+  margin-left: -50px;
+  line-height: 24px;
+  float: left;
+}
+
+.comment-author a{
+  /* No underline */
+  color: #000;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+
+textarea#comment-body {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;";
+}
+
+.styled-form * {
+  margin: 0;
+  padding: 0;
+}
+form.styled-form {
+  display: inline-block;
+}
+
+div.centered-margin-auto {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.styled-form legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.styled-form fieldset {
+  background-color: #ececec;
+  border: 2px solid #999;
+  box-sizing: border-box;
+  color: #4d4d4d;
+  font-family:
+    myriad-pro, "Helvetica Neue", Helvetica, Roboto,
+    Arial, sans-serif;
+  padding: 1rem;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.styled-form label {
+  display: block;
+  font-weight: bold;
+}
+
+.styled-form dl {
+  margin: 10px auto;
+}
+
+.styled-form input[type="text"] {
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  width: 100%;
+  line-height: 1.5;
+}
+
+.styled-form input[type="submit"] {
+  background-color: #56B2E5;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.styled-form input[type="submit"]:hover {
+  background-color: #4280B5
+}
+
+.styled-form textarea {
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.5rem;
+  width: 100%;
+}
+
+a#cancel-button-link {
+  background-color: #787878;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  /* No underline */
+  text-decoration: none;
+}
+
+a#cancel-button-link:hover {
+  background-color: #5e5e5e;
+}
+
+/* Forum actions top bar */
+section#forum-actions {
+  background-color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.search-form input[type="search"] {
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  width: 80%;
+  line-height: 2.0;
+}
+
+.search-form input[type="submit"] {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  width: auto;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+a.new-post {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  float: right !important;
+  margin-right: 10px !important;
+  text-decoration: none;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+
+input.comment-btn {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  min-width: 80px;
+  padding: 0.5rem 1rem;
+  /* rounded button */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input.delete-btn {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  min-width: 80px;
+  padding: 0.5rem 1rem;
+  /* rounded button */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+fieldset.comment {
+  margin: auto;
+  display: inline-block;
+}
+
+.full-width: {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th.left-align {
+  text-align: left;
+  padding-left: 4.75rem;
+}
+
+
+
+.post-list thead {
+  display: table-head
+}
+
+#posts-for-page tbody {
+  border-radius: 20px;
+  /* Rounded corners */
+  border: 1px solid #ccc;
+}
+
+div#posts-table {
+  padding: 10px;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td {
+  vertical-align: inherit;
+  display: table-cell;
+}
+
+td .author-avatar {
+  float: left;
+}
+
+td.left-align {
+  padding-top: 0.5rem;
+}
+
+td .post-title {
+  padding-left: 3rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+td.post-comments-count,
+td.post-last-activity {
+  text-align: center;
+}
+
+div.author-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  /* padding-left: 1rem; */
+}
+
+/* For Avatar Letters + Circle */
+[data-letters]:before {
+  content:attr(data-letters);
+  display:inline-block;
+  font-size:1rem;
+  width:2.5rem;
+  height:2.5rem;
+  line-height:2.5rem;
+  text-align:center;
+  border-radius:50%;
+  background:dodgerblue;
+  vertical-align:middle;
+  margin-right:1em;
+  color:white;
+}
+
+div.post-title {
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+.post-title a {
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+div.post-author a {
+  color: rgb(132, 132, 132);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+input.delete-btn:hover {
+  color: #b00b00; 
+}
+
+#replies .actions {
+  padding-bottom: 0.5rem;
+}
+
+a.reply { 
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signin fieldset,
+.signup fieldset {
+  margin: auto;
+  width: 40%;
+}
+
+
+.signin a#signup,
+.signin input[type="submit"] {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  /* no underline on a link */
+  text-decoration: none;
+}
+
+.signin a#signup:hover {
+  background-color: #5e5e5e;
+}
+
+.signup input[type="submit"] {
+  background-color: #4d4d4d;
+  border: 1px solid #999;
+  border-radius: 4px;
+  color: #fff;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.signin input[type="text"],
+.signin input[type="password"] {
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  width: 80%;
+  line-height: 2.0;
+}
+
+.signup label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.signup input[type="text"],
+.signup input[type="password"] {
+  border: 1px solid #999;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: normal 1rem Helvetica, sans-serif;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
+  width: 80%;
+  line-height: 2.0;
+}
+
+.signin label {
+  color: #111111;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+}
+
